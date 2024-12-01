@@ -34,6 +34,8 @@ npm run build
 ├── components    # Reusable UI components
 │   ├── shared # Reusable UI components
 │   ├── tables # View tables data and columns of data
+        └── tables-posts #view posts data
+        └── constatnt-data  #conatant array of field for add form and update
 │   ├── hooks  # Custom hooks for reusable add, edit, and delete dialog in all project
 ├── lib         # Utility functions
 │   ├── actions # Action server function requests
