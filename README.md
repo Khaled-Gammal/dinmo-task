@@ -1,6 +1,6 @@
 # Project Title
 
-A brief description of what this project does and who it's for.
+dinamo task to view data of posts in table
 
 ## Installation
 
@@ -11,7 +11,7 @@ Instructions on how to install and set up the project.
 git clone https://github.com/Khaled-Gammal/dinmo-task.git
 
 # Navigate to the project directory
-cd yourproject
+cd dinmo-task
 
 # Install dependencies
 npm install --force 
