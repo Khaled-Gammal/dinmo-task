@@ -15,7 +15,7 @@ export function cn(...inputs: ClassValue[]) {
  * @param updatedData - The updated object to compare against.
  * @returns An object containing only the fields that have changed.
  */
-export function compareData<T extends Record<string, any>>(
+export function compareData<T extends Record<string, unknown>>(
   originalData: T,
   updatedData: Partial<T>
 ): Partial<T> {
@@ -23,7 +23,7 @@ export function compareData<T extends Record<string, any>>(
 
   Object.keys(originalData).forEach((key) => {
     if (originalData[key] !== updatedData[key]) {
-      changes[key] = updatedData[key];
+      changes[key as keyof T] = updatedData[key];
     }
   });
 

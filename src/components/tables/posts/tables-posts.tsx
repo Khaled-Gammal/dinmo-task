@@ -9,7 +9,7 @@ import { useEditDialog } from "@/hooks/use-edit-dialog";
 import { compareData } from "@/lib/utils";
 import { useConfirmMessage } from "@/hooks/use-delete-dialog";
 import { handleDeleteRow } from "@/lib/actions/delete-server";
-
+import { handleUpdateInServer } from "@/lib/actions/patch-server";
 import { DataTableDemo } from "@/components/shared/table-data";
 import {
   addPostFields,
@@ -82,7 +82,7 @@ export default function TablesPosts({ posts }: { posts: IPosts[] }) {
   // edit post dialog
   const [handleEditPost, editPostConfirmDialog] = useEditDialog({
     onConfirm: async (state) =>
-      handleEdit(state, posts, compareData, handlePostInServer),
+      handleEdit(state, posts, compareData, handleUpdateInServer),
     title: "Edit Group",
     fields: editPostFields,
   });  
@@ -130,7 +130,7 @@ export default function TablesPosts({ posts }: { posts: IPosts[] }) {
     ) => Record<string, any>,
     handleUpdateInServer: (
       endpoint: string,
-      data: any,
+      data: Record<string, unknown>,
       revalidatePath: string
     ) => Promise<Response>
   ) => {
